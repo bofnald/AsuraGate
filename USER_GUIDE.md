@@ -1,7 +1,7 @@
 # AsuraGate User Guide
 
 This guide walks you through installing and using AsuraGate, step by step. You don't need to know how to
-use a terminal.
+use a terminal; if you prefer one, see [Using AsuraGate from a terminal](#12-using-asuragate-from-a-terminal).
 
 - [1. What AsuraGate does](#1-what-asuragate-does)
 - [2. Before you start](#2-before-you-start)
@@ -14,6 +14,7 @@ use a terminal.
 - [9. Updating](#9-updating)
 - [10. Uninstalling](#10-uninstalling)
 - [11. FAQ](#11-faq)
+- [12. Using AsuraGate from a terminal](#12-using-asuragate-from-a-terminal)
 
 ---
 
@@ -325,3 +326,54 @@ keeps working either way.
 **Does Steam overwrite the launch options?**
 Only if Steam was running while AsuraGate wrote them. That's why AsuraGate doesn't write them while Steam is
 open, and **Check** tells you if they're missing.
+
+## 12. Using AsuraGate from a terminal
+
+Everything the window does also works from a terminal, without a window. This is useful if PySide6, kdialog
+and zenity are all missing, or if you simply prefer the command line.
+
+Open a terminal in the AsuraGate folder's `src` folder and run one of these:
+
+| Command | Same as |
+|---|---|
+| `python3 -m asuragate doctor` | **Check**. Prints `[OK]`, `[WARN]` and `[ERROR]` lines. |
+| `python3 -m asuragate install` | **Install / Update**. Close Steam and the game first. |
+| `python3 -m asuragate launch` | **Play**. Starts Guild Wars 2 through Steam. |
+| `python3 -m asuragate uninstall` | **Uninstall**. See the options below. |
+| `python3 -m asuragate launch-options` | Prints the **Steam launch options** to paste into Steam by hand. |
+| `python3 -m asuragate config` | Shows the **Settings**. |
+| `python3 -m asuragate shortcut` | Adds the desktop and application menu shortcut (`--remove` removes it). |
+
+Running `python3 -m asuragate` without a command opens the window. If no window can be shown, it prints
+the commands above instead.
+
+Note that the window's **Check** button is called `doctor` here; there is no `check` command.
+
+**Uninstall options.** These match the extra checkboxes in the window:
+
+- `--remove-logs`: also remove the overlay's log files
+- `--remove-keybinds`: also remove the overlay's own shortcut file (not the game's key bindings)
+- `--remove-steam-backup`: also remove the backup of Steam's `localconfig.vdf`
+
+**Changing settings.** Use `config --set KEY=VALUE`, as many times as needed. Then run `install` again (with
+Steam closed) so the change takes effect.
+
+| Key | Window setting |
+|---|---|
+| `steam_root` | **Steam directory** (empty = find it automatically) |
+| `steam_login` | **Log in with**: `true` = Steam account, `false` = ArenaNet account |
+| `game_args` | **Extra GW2 arguments** |
+| `blish_audio` | **Blish HUD sounds** (leave it `false`) |
+
+For example:
+
+```bash
+python3 -m asuragate config --set steam_root="$HOME/MyGames/Steam"
+python3 -m asuragate install
+python3 -m asuragate doctor
+```
+
+`--help` shows all commands, and `python3 -m asuragate <command> --help` shows the options of one command.
+
+`launch` needs your desktop session, because it starts Steam and the game. `doctor`, `install`,
+`uninstall` and `config` work without one, for example over SSH.
