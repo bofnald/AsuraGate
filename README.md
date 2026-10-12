@@ -1,5 +1,7 @@
 # AsuraGate
 
+*An Asura Gate from Linux to Blish HUD. Engineered with superior intellect, obviously.*
+
 **Blish HUD for Guild Wars 2 on Linux, inside the game, like on Windows.**
 
 AsuraGate sets up [Blish HUD](https://blishhud.com/) for the Steam version of Guild Wars 2 running with
