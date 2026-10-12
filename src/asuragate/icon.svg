@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>AsuraGate</title>
+  <defs>
+    <radialGradient id="portal" cx="50%" cy="52%" r="55%">
+      <stop offset="0" stop-color="#f4fbff"/>
+      <stop offset="0.18" stop-color="#9ff3ff"/>
+      <stop offset="0.45" stop-color="#4c8dff"/>
+      <stop offset="0.75" stop-color="#7a3cff"/>
+      <stop offset="1" stop-color="#2a0b5e"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0.55" stop-color="#7fe8ff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#7fe8ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a93a6"/>
+      <stop offset="0.5" stop-color="#5b6377"/>
+      <stop offset="1" stop-color="#363b4a"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9c46a"/>
+      <stop offset="1" stop-color="#a8742a"/>
+    </linearGradient>
+    <linearGradient id="crystal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.5" stop-color="#7ff6ff"/>
+      <stop offset="1" stop-color="#2f8cff"/>
+    </linearGradient>
+    <clipPath id="ring">
+      <polygon points="128,52 178,72 198,122 178,172 128,192 78,172 58,122 78,72"/>
+    </clipPath>
+  </defs>
+
+  <!-- platform -->
+  <polygon points="40,214 216,214 236,240 20,240" fill="#2b2f3b"/>
+  <polygon points="40,214 216,214 228,224 28,224" fill="#4a5163"/>
+  <rect x="96" y="204" width="64" height="10" rx="2" fill="#7fe8ff" opacity="0.65"/>
+
+  <!-- outer glow -->
+  <circle cx="128" cy="122" r="96" fill="url(#glow)"/>
+
+  <!-- angular stone frame -->
+  <polygon points="128,26 196,52 224,122 196,192 128,218 60,192 32,122 60,52" fill="url(#stone)"
+           stroke="#22252f" stroke-width="4" stroke-linejoin="round"/>
+  <polygon points="128,40 186,62 210,122 186,182 128,204 70,182 46,122 70,62" fill="#2f3443"/>
+
+  <!-- portal -->
+  <polygon points="128,52 178,72 198,122 178,172 128,192 78,172 58,122 78,72" fill="url(#portal)"/>
+  <g clip-path="url(#ring)" fill="none" stroke-linecap="round">
+    <path d="M128 122 m-58 -6 a60 52 0 0 1 104 -30" stroke="#ffffff" stroke-opacity="0.55" stroke-width="5"/>
+    <path d="M128 122 m58 8 a60 52 0 0 1 -104 30" stroke="#ffffff" stroke-opacity="0.55" stroke-width="5"/>
+    <path d="M128 122 m-38 -16 a42 36 0 0 1 70 -6" stroke="#c9f7ff" stroke-opacity="0.7" stroke-width="4"/>
+    <path d="M128 122 m38 16 a42 36 0 0 1 -70 6" stroke="#c9f7ff" stroke-opacity="0.7" stroke-width="4"/>
+    <path d="M128 122 m-20 -6 a22 18 0 0 1 36 -4" stroke="#ffffff" stroke-opacity="0.8" stroke-width="3"/>
+  </g>
+
+  <!-- gold trim and rune nodes on the frame -->
+  <polygon points="128,40 186,62 210,122 186,182 128,204 70,182 46,122 70,62" fill="none"
+           stroke="url(#metal)" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="#7fe8ff" stroke="#1d6d86" stroke-width="1.5">
+    <polygon points="46,116 52,122 46,128 40,122"/>
+    <polygon points="210,116 216,122 210,128 204,122"/>
+    <polygon points="64,184 70,190 64,196 58,190"/>
+    <polygon points="192,184 198,190 192,196 186,190"/>
+    <polygon points="64,48 70,54 64,60 58,54"/>
+    <polygon points="192,48 198,54 192,60 186,54"/>
+  </g>
+
+  <!-- crystal on top -->
+  <polygon points="128,4 142,26 128,46 114,26" fill="url(#crystal)" stroke="#1d6d86" stroke-width="2"
+           stroke-linejoin="round"/>
+  <polygon points="128,4 142,26 128,26" fill="#ffffff" opacity="0.45"/>
+</svg>

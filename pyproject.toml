@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asuragate"
+version = "1.0.0"
+description = "AsuraGate: one-click Blish HUD for Guild Wars 2 on Linux / Steam / Proton (rendered in-game)"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "bofnald"}]
+dependencies = []
+
+[project.optional-dependencies]
+gui = ["PySide6>=6.5"]  # optional: ships with Bazzite; otherwise kdialog/zenity is used
+
+[project.scripts]
+asuragate = "asuragate.cli:main"
+
+[tool.setuptools]
+packages = ["asuragate"]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+asuragate = ["icon.svg"]

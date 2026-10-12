@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=AsuraGate
+Comment=Install and launch Guild Wars 2 with Blish HUD
+Exec=sh -c "cd \\"\\$(dirname -- \\"\\$0\\")/src\\" && exec python3 -m asuragate --register-menu" %k
+Icon=applications-games
+Terminal=false
+Categories=Game;
+Actions=play;
+
+[Desktop Action play]
+Name=Play
+Exec=sh -c "cd \\"\\$(dirname -- \\"\\$0\\")/src\\" && exec python3 -m asuragate launch" %k
