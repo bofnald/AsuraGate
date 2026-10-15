@@ -172,13 +172,31 @@ click **Install / Update** (with Steam closed) so it takes effect.
 | Setting | When you need it |
 |---|---|
 | **Steam directory** | Leave empty; AsuraGate finds Steam by itself. Only fill it in if **Check** says Steam wasn't found; see [Steam is installed somewhere else](#steam-is-installed-somewhere-else). |
-| **Log in with** | How you log in to Guild Wars 2. **ArenaNet account**: you log in with your ArenaNet e-mail and password. **Steam account**: your GW2 account is linked to Steam and you log in through Steam. AsuraGate puts the matching login option into Steam's launch options for you; switching it changes them on the next **Install / Update**. |
+| **Log in with** | How you log in to Guild Wars 2. **ArenaNet account**: you log in with your ArenaNet e-mail and password. **Steam account**: your GW2 account is linked to Steam and you log in through Steam. AsuraGate puts the matching login option into Steam's launch options for you; to switch, see [Switching between ArenaNet and Steam login](#switching-between-arenanet-and-steam-login). |
 | **Extra GW2 arguments** | Other startup options for the game. Most people leave this empty. The login is set above, so a `-provider` option here is ignored. |
 | **Blish HUD sounds** | Leave this **off**. Blish HUD's own sounds make it crash under Linux. The game's sound is not affected either way, only Blish HUD's click sounds. |
 | **Steam launch options** | Read-only. This is what AsuraGate puts into Steam. If AsuraGate couldn't write it because Steam was running, click **Copy** and paste it yourself: Steam → right-click Guild Wars 2 → *Properties* → *General* → *Launch Options*. |
 
 The frame rate fix for Pathing (Blish HUD's frame limiter set to *Match Monitor Refresh Rate*) is applied
 automatically by **Install / Update**; there's nothing to set.
+
+### Switching between ArenaNet and Steam login
+
+The login choice is written into Steam's launch options for Guild Wars 2. Changing it in AsuraGate alone
+does nothing until it is written there, so follow all the steps:
+
+1. **Exit Steam completely**: right-click the Steam icon in the system tray → **Exit Steam**.
+2. Open **AsuraGate**.
+3. Under **Log in with**, choose the other option (**ArenaNet account** or **Steam account**). The
+   **Steam launch options** box changes right away, to show what will be written.
+4. Click **Install / Update**. This writes the new launch options into Steam.
+5. Click **Check**. The line *Steam launch options run the loader* should be **[OK]**.
+6. Start Steam and press **Play** on Guild Wars 2.
+
+If you do step 4 while Steam is still running, AsuraGate doesn't write the launch options (Steam would
+overwrite them when it closes) and the log says so. Then either exit Steam and click **Install / Update**
+again, or click **Copy** next to **Steam launch options** and paste it into Steam yourself: right-click
+Guild Wars 2 → *Properties* → *General* → *Launch Options*.
 
 ## 7. What AsuraGate changes on your system
 
