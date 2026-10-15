@@ -373,7 +373,9 @@ Guild Wars 2 support site and decide for yourself. **You use it at your own risk
 No. It only adds the `addons/LOADER_public/` folder. Game files are untouched.
 
 **Does it work with ArcDPS?**
-Not tested.
+On the author's system (Bazzite KDE) it runs together with ArcDPS without problems. Other setups haven't
+been tried. AsuraGate doesn't install or manage ArcDPS: install it the usual way (its `d3d11.dll` goes into
+the Guild Wars 2 folder). AsuraGate's **Uninstall** leaves ArcDPS alone.
 
 **Does AsuraGate need to be open while I play?**
 No. Once installed, Steam's **Play** is enough.
