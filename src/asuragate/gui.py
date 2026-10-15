@@ -303,6 +303,7 @@ def _isolate_bundled_qt() -> None:
 def run_gui(cfg: Config, config_file: str | None = None) -> int:
     _isolate_bundled_qt()
     app = QApplication(sys.argv[:1])
+    app.setWindowIcon(QIcon(str(Path(__file__).resolve().parent / "icon.svg")))  # dialogs inherit it too
     win = MainWindow(cfg, config_file)
     win.show()
     return app.exec()

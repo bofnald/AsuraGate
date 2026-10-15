@@ -53,12 +53,37 @@ distribution's PySide6 package to get the full window.
 > **Other setups:** GNOME, Steam installed as a Flatpak, and the Steam Deck have **not been tested**.
 > They may work; if you try one, please report how it went.
 
+### Getting Guild Wars 2 ready
+
+1. Install Guild Wars 2 from Steam and let the download finish.
+
+   <img src="docs/images/01-steam-install.png" alt="Steam downloading Guild Wars 2" width="600">
+
+2. Start it once: in your Steam library, right-click **Guild Wars 2** → **Play**.
+
+   <img src="docs/images/02-steam-play.png" alt="Right-click Guild Wars 2 in the Steam library, then Play" width="220">
+
+3. Wait until the Guild Wars 2 login screen appears, then close it. You don't need to log in.
+
+   <img src="docs/images/03-gw2-launcher.png" alt="The Guild Wars 2 login screen" width="600">
+
 ## 3. Installing
 
 ### Step 1: Download
 
-Download AsuraGate (on GitHub: green **Code** button → **Download ZIP**) and extract it wherever you like,
-for example into your home folder. You'll get a folder like this:
+1. On the [AsuraGate GitHub page](https://github.com/bofnald/AsuraGate), click the green **Code** button →
+   **Download ZIP**.
+
+   <img src="docs/images/05-download-zip.png" alt="GitHub: Code button, then Download ZIP" width="600">
+
+2. Move the zip wherever you like (for example into your home folder), right-click it → **Extract** →
+   **Extract here**.
+
+   <img src="docs/images/06-extract.png" alt="Dolphin: right-click the zip, Extract, Extract here" width="420">
+
+You'll get a folder like this:
+
+<img src="docs/images/07-folder.png" alt="The extracted AsuraGate folder" width="600">
 
 ```
 AsuraGate/
@@ -73,8 +98,10 @@ AsuraGate/
 
 Double-click **AsuraGate** in the folder.
 
-The first time, KDE asks whether you trust this file, because downloaded files aren't allowed to run
-automatically. Choose to run/execute it. This is asked only once.
+The first time, KDE asks what to do with the file, because downloaded files aren't allowed to run
+automatically. Choose **Launch**. This is asked only once.
+
+<img src="docs/images/08-launch-prompt.png" alt="KDE asks what to do with the file: choose Launch" width="500">
 
 AsuraGate opens and also **adds itself to your application menu** (under *Games*). From now on you can start
 it from the menu. The launcher in the folder gets the AsuraGate icon after this first start (press **F5** in
@@ -82,13 +109,23 @@ the file manager if it doesn't change right away).
 
 ### Step 3: Install Blish HUD
 
-1. **Close Guild Wars 2 and Steam** completely (in Steam: *Steam* menu → *Exit*). Steam must be closed,
-   otherwise it overwrites the change AsuraGate makes to its settings.
-2. In AsuraGate, click **Install / Update**.
+1. **Close Guild Wars 2 and Steam** completely: right-click the Steam icon in the system tray →
+   **Exit Steam** (or in Steam: *Steam* menu → *Exit*). Closing the Steam window is not enough. Steam must be
+   closed, otherwise it overwrites the change AsuraGate makes to its settings.
+
+   <img src="docs/images/04-exit-steam.png" alt="Right-click the Steam icon in the system tray, then Exit Steam" width="320">
+
+2. In AsuraGate, choose how you log in (**ArenaNet account** or **Steam account**), then click
+   **Install / Update**.
+
+   <img src="docs/images/09-window.png" alt="The AsuraGate window" width="600">
+
 3. Wait until **Done.** appears at the bottom. The first time, about 18 MB is downloaded, so it can take a
    moment.
 4. Click **Check**. Everything should be marked **[OK]**. A few **[WARN]** lines are normal at this stage;
    see [Understanding Check](#understanding-check).
+
+   <img src="docs/images/10-install-and-check.png" alt="The log after Install / Update and Check" width="600">
 
 That's it.
 
@@ -102,6 +139,8 @@ Start Guild Wars 2 the way you prefer:
 
 Blish HUD starts together with the game and appears in it after a few seconds. When you close the game,
 Blish HUD closes too.
+
+<img src="docs/images/11-in-game.png" alt="Guild Wars 2 with Blish HUD loaded, its icons at the top left" width="600">
 
 **The first time Blish HUD runs:** it creates its own settings. Afterwards, close the game, open AsuraGate
 and click **Install / Update** once more. This sets Blish HUD's frame rate option that prevents a crash
@@ -217,7 +256,7 @@ the test system.
 
 ### Double-clicking AsuraGate does nothing / opens a text editor
 
-- Make sure you confirmed KDE's "trust/execute" question. If you chose "open", right-click the file →
+- Make sure you chose **Launch** in KDE's question. If you chose **Open with Kate**, right-click the file →
   *Properties* → *Permissions* → tick *Is executable*, then double-click again.
 - On GNOME, launcher files can't be started from the file manager. Open a terminal in the AsuraGate folder's
   `src` folder and run `python3 -m asuragate` instead.
@@ -282,6 +321,8 @@ The game then starts normally without Blish HUD.
 Before anything is removed, a window lists exactly what will be removed and what won't. It also offers to
 remove a few leftovers. Each one is a tick box, **off by default**: nothing extra is removed unless you tick
 it, so an accidental uninstall loses nothing. **Hover over an option** for a full explanation:
+
+<img src="docs/images/12-uninstall.png" alt="The Uninstall window" width="600">
 
 | Option | What it is |
 |---|---|
@@ -377,3 +418,8 @@ python3 -m asuragate doctor
 
 `launch` needs your desktop session, because it starts Steam and the game. `doctor`, `install`,
 `uninstall` and `config` work without one, for example over SSH.
+
+---
+
+*Guild Wars 2 screenshots and artwork © ArenaNet, LLC. Steam © Valve Corporation. Used here only to
+illustrate the steps.*
